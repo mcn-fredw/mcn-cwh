@@ -259,8 +259,6 @@ class CloudWatch extends AbstractProcessingHandler
             static::LOG_EVENTS_STR => $entries
         ];
 
-        $this->checkThrottle();
-
         try {
             $response = $this->client->putLogEvents($data);
         } catch (CloudWatchLogsException $ex) {
